@@ -1,27 +1,37 @@
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-class Box{
-         int width;
-         int height;
-         int depth;}
 
-public class M3{
-    public static void main(String[]args) throws IOException{
-        Box box1=new Box();
-        int  vol;
-        File f1=new File("in1.txt");
-        Scanner sc1=new Scanner(f1);
-        box1.width=sc1.nextInt();
-        box1.height=sc1.nextInt();
-        box1.depth=sc1.nextInt();
-
-        vol=box1.width*box1.height*box1.depth;
-        System.out.println(vol);
-    }
-}
-
-
+class MyPoint1{
+    private int x;
+    private int y;
+    public MyPoint1(){
+        this.x=0;
+        this.y=0;}
+    public MyPoint1(int x,int y){
+        this.x=x;
+        this.y=y;}
+    public void setXY(int x,int y){
+         this.x=x;
+         this.y=y;}
+    public int[] getXY(){
+        int[] points={x,y};
+        return points;}
+    public double distance(int x,int y){
+        int xDiff=this.x-x;
+        int yDiff=this.y-y;
+        return Math.sqrt(xDiff*xDiff+yDiff*yDiff);}
+    public double distance(){
+        return Math.sqrt(x*x+y*y);}}
+public class M3 {
+    public static void main(String[] args){
+        MyPoint1 point1=new MyPoint1();
+        MyPoint1 point2=new MyPoint1(3,4);
+        point1.setXY(1,2);
+        int[]points=point1.getXY();
+        System.out.print("point1 coordinates are");
+        System.out.print(points[0]+","+points[1]+"\n");
+        System.out.println(point1.distance(5,6));
+        System.out.println(point1.distance());}}
+        
     
-         
+    
+    
 
